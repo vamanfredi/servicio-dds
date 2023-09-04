@@ -1,8 +1,8 @@
 const { Router } = require('express')
-const { RankingController } = require('../controllers/rankings')
+const { EntityController } = require('../controllers/rankings.js')
 
 const rankingsRouter = Router()
 
-rankingsRouter.get('/', RankingController.calculateRanking)
+rankingsRouter.get('/', EntityController.calculateRanking)
 
 module.exports = { rankingsRouter }

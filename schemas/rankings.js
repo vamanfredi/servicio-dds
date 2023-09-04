@@ -4,14 +4,20 @@ const entitySchema =
 z.object({
   entities: z.array(
     z.object({
-      // todo los atributos
+      name: z.string(),
+      ammountOfAffectedMembers: z.number().int(),
+      incidents: z.array(
+        z.object({
+          resTime: z.number().int()
+        })
+      )
     }))
 })
 
-const validateEntity = (input) => {
+const validateEntities = (input) => {
   return entitySchema.safeParse(input)
 }
 
 module.exports = {
-  validateEntity
+  validateEntities
 }

@@ -1,5 +1,5 @@
-const { validateEntities } = require('../schemas/ranking.')
-const { EntityModel } = require('../models/ranking.js')
+const { validateEntities } = require('../schemas/rankings.js')
+const { EntityModel } = require('../models/rankings.js')
 
 class EntityController {
   static calculateRanking (req, res) {
@@ -10,10 +10,10 @@ class EntityController {
       return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
 
-    const orderedEntities = EntityModel.getOrderedEntities(result)
+    const orderedEntities = EntityModel.getOrderedEntities(result.data)
 
     res.status(200).json(orderedEntities)
   }
 }
 
-module.exports = EntityController
+module.exports = { EntityController }

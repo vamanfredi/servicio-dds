@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.disable('x-powered-by')
 
-app.use('/rankings', rankingsRouter)
+app.use('/calculate_ranking', rankingsRouter)
 
 const PORT = process.env.PORT ?? 4000
 

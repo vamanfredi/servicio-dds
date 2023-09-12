@@ -9,7 +9,7 @@ class EntityModel {
     ).sort((a, b) => {
       return b.levelOfImpact - a.levelOfImpact
     })
-    return response
+    return { result: response }
   }
 }
 

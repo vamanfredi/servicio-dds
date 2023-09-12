@@ -1,4 +1,4 @@
-GET http://localhost:8080/rankings
+POST http://localhost:4000/calculate_ranking
 Content-Type: application/json
 
 {

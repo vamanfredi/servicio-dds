@@ -20,8 +20,8 @@ function calcularNivelDeImpacto (entity) {
   let cantIncidentesNoResueltos = 0
   const CNF = 3
   for (const incident of entity.incidents) {
-    if (incident.sumResTime >= 0) {
-      sumResTime += incident.sumResTime
+    if (incident.resTime >= 0) {
+      sumResTime += incident.resTime
     } else {
       cantIncidentesNoResueltos++
     }
